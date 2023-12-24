@@ -13,13 +13,14 @@ import logger as l
 # @param spatial_network(n,n) 空间网络
 # @param ground_truth 标签
 # @return Z_all
-def stACN_master(expression,spatial_network, gt, lamb=0.001, dim=50):
+def stACN(expression, spatial_network, gt, lamb=0.001, dim=50):
     expression = expression.T
     spatial_network = spatial_network.T
 
     # Data preparation and Variables init
     data = [expression, spatial_network]
     W = [None] * 2
+
     # 归一化
     w_dump = "./w_dump.pkl"
     if os.path.exists(w_dump):
@@ -36,23 +37,19 @@ def stACN_master(expression,spatial_network, gt, lamb=0.001, dim=50):
     X = W
     V = len(X)
     N = X[0].shape[0]
-    cls_num = len(np.unique(gt))
     Eh = [np.zeros((dim, N)) for _ in range(V)]
     Yh = [np.zeros((dim, N)) for _ in range(V)]
     Ys = [np.zeros((N, N)) for _ in range(V)]
     Zv = [np.zeros((N, N)) for _ in range(V)]
     T = [np.zeros((N, N)) for _ in range(V)]
-    Z_tensor = np.stack(Zv, axis=2)
-    T_tensor = np.stack(T, axis=2)
-    Ys_tensor = np.stack(Ys, axis=2)
+
     sX = [N, N, V]
     P = [np.zeros((dim, N)) for _ in range(V)]
-    IsConverge = False
+
     mu = 1e-4
     pho = 2
     max_mu = 1e6
     max_iter = 50
-    iter_ = 1
     thresh = 1e-6
 
     for iter_ in tqdm(range(max_iter)):
@@ -62,6 +59,7 @@ def stACN_master(expression,spatial_network, gt, lamb=0.001, dim=50):
         for i in range(V):
             l.logger.info(f'[RunCSolver]iter = {iter_} Opt_P E v_iter{i}')
             P[i] = Opt_P(Yh[i], mu, Eh[i], X[i] - X[i] @ Zv[i])
+            # P[i] = updatePP(Yh[i], mu, Eh[i], X[i] - X[i] @ Zv[i])
             l.logger.info(f'[RunCSolver]iter = {iter_} Opt_P E v_iter{i} end')
             A = P[i] @ X[i]
             Zv[i] = np.linalg.solve(A.T @ A + np.eye(N), A.T @ (Yh[i] / mu) + A.T @ (A - Eh[i]) + T[i] - Ys[i] / mu)
@@ -74,7 +72,6 @@ def stACN_master(expression,spatial_network, gt, lamb=0.001, dim=50):
         l.logger.info(f'[RunCSolver]iter = {iter_} calculate E end')
 
         Z_tensor = np.stack(Zv, axis=2)
-        # T_tensor = np.stack(T, axis=2)
         Ys_tensor = np.stack(Ys, axis=2)
         l.logger.info(f'[RunCSolver]iter = {iter_} wshrinkObj')
         t_tensor, objV = wshrinkObj(Z_tensor + 1 / mu * Ys_tensor, 1 / mu, sX, 0, 3)

@@ -14,20 +14,20 @@ def load_data_for_h5(input_data_path:str, section_id:str):
     l.logger.info(f'[LoadData] {file_name_for_filtered_feature_bc_matrix} loading ...')
 
 
-    filtered_feature_bc_matrix  = sc.read_visium(path=input_dir, count_file= file_name_for_filtered_feature_bc_matrix)
-    filtered_feature_bc_matrix.var_names_make_unique()
+    AnnData  = sc.read_visium(path=input_dir, count_file= file_name_for_filtered_feature_bc_matrix)
+    AnnData.var_names_make_unique()
     l.logger.info(f'[LoadData] {file_name_for_filtered_feature_bc_matrix} load success')
 
     # 数据预处理
-    sc.pp.filter_genes(filtered_feature_bc_matrix, min_cells=10)
-    sc.pp.highly_variable_genes(filtered_feature_bc_matrix, flavor='seurat_v3', n_top_genes=3000)
-    hvg_filter = filtered_feature_bc_matrix.var['highly_variable']
-    sc.pp.normalize_total(filtered_feature_bc_matrix, inplace=True)
-    anndata = filtered_feature_bc_matrix[:, hvg_filter]
+    sc.pp.filter_genes(AnnData, min_cells=10)
+    sc.pp.highly_variable_genes(AnnData, flavor='seurat_v3', n_top_genes=3000)
+    hvg_filter = AnnData.var['highly_variable']
+    sc.pp.normalize_total(AnnData, inplace=True)
+    AnnData = AnnData[:, hvg_filter]
     l.logger.info(f'[LoadData] {file_name_for_filtered_feature_bc_matrix} pre-process success')
-    return anndata
+    return AnnData
 
-def load_data_for_truth(input_data_path:str, section_id:str,anndata):
+def load_data_for_groud_truth(input_data_path:str, section_id:str, anndata):
     truth_name = 'truth.txt'
     ann_df_file_path  =  os.path.join(input_data_path, section_id,f'{section_id}_{truth_name}' )
 

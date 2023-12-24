@@ -4,8 +4,9 @@ from sklearn.neighbors import kneighbors_graph
 from sklearn.metrics.pairwise import cosine_similarity
 from tqdm import trange
 import scipy.sparse as sp
-from scipy.linalg import svd
 
+from scipy.linalg import svd
+from sklearn.decomposition import TruncatedSVD
 def soft_numpy(x, T):
     if np.sum(np.abs(T)) == 0.:
         y = x
@@ -112,7 +113,7 @@ def Opt_P(Y, mu, A, X):
     G = X.T
     Q = (A - Y / mu).T
     W = G.T @ Q + np.finfo(float).eps
-    U, S, Vt = np.linalg.svd(W, full_matrices=False)
+    U, S, Vt = svd(W, full_matrices=False)
     PT = U @ Vt
     P = PT.T
     return P
