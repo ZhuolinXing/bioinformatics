@@ -6,6 +6,7 @@ import numpy as np
 from src.network import create_sppmi_mtx,constructW_PKN
 from src.network import solve_l1l2, Opt_P, wshrinkObj
 from tqdm import tqdm
+from  scipy.linalg import solve
 import logger as l
 
 # stACN_master
@@ -13,7 +14,7 @@ import logger as l
 # @param spatial_network(n,n) 空间网络
 # @param ground_truth 标签
 # @return Z_all
-def stACN(expression, spatial_network, gt, lamb=0.001, dim=50):
+def stACN(expression, spatial_network, gt, lamb=0.001, dim=100):
     expression = expression.T
     spatial_network = spatial_network.T
 
@@ -30,7 +31,7 @@ def stACN(expression, spatial_network, gt, lamb=0.001, dim=50):
         for i in range(2):
             # 将data[i]除以每列的平方根
             data[i] =  data[i] / np.tile(np.sqrt(np.sum(data[i] ** 2, axis=0)), (data[i].shape[0], 1))
-            W[i] = create_sppmi_mtx(constructW_PKN(data[i], 20), 2)
+            W[i] = create_sppmi_mtx(constructW_PKN(data[i], 10), 2)
             #W[i] = create_sppmi_mtx(data[i], 2)
         with open(w_dump,'wb') as  w_dump_file:
             pickle.dump(W,w_dump_file)
@@ -62,7 +63,7 @@ def stACN(expression, spatial_network, gt, lamb=0.001, dim=50):
             # P[i] = updatePP(Yh[i], mu, Eh[i], X[i] - X[i] @ Zv[i])
             l.logger.info(f'[RunCSolver]iter = {iter_} Opt_P E v_iter{i} end')
             A = P[i] @ X[i]
-            Zv[i] = np.linalg.solve(A.T @ A + np.eye(N), A.T @ (Yh[i] / mu) + A.T @ (A - Eh[i]) + T[i] - Ys[i] / mu)
+            Zv[i] = solve(A.T @ A + np.eye(N), A.T @ Yh[i] / mu + A.T @ (A - Eh[i]) + T[i] - Ys[i] / mu)
             Zv[i] = (Zv[i] + Zv[i].T) / 2
             G = P[i] @ X[i] - P[i] @ X[i] @ Zv[i] + Yh[i] / mu
             B = np.vstack((B, G))
@@ -76,7 +77,7 @@ def stACN(expression, spatial_network, gt, lamb=0.001, dim=50):
         l.logger.info(f'[RunCSolver]iter = {iter_} wshrinkObj')
         t_tensor, objV = wshrinkObj(Z_tensor + 1 / mu * Ys_tensor, 1 / mu, sX, 0, 3)
         T_tensor = t_tensor.reshape(sX)
-        G= []
+        G = []
         for i in range(V):
             Zv[i] = Z_tensor[:, :, i]
             T[i] = T_tensor[:, :, i]
@@ -95,9 +96,8 @@ def stACN(expression, spatial_network, gt, lamb=0.001, dim=50):
         max_err = np.max(errp + errs)
         l.logger.info(f'[RunCSolver]iter = {iter_} max_err={max_err}')
         if max_err <=  thresh:
+            l.logger.info(f'[RunCSolver]iter = {iter_} max_err={max_err} < {thresh} break')
             break
-        cov_val = max_err
-
 
     Z_all = np.zeros((N, N))
     for i in range(V):
