@@ -1,7 +1,3 @@
-import scanpy as sc
-import mnmstpy as mnmst
-device = 'cpu'
-# 聚类
 import numpy as np
 from sklearn.metrics.cluster import adjusted_rand_score
 import igraph as ig
@@ -9,7 +5,10 @@ import leidenalg
 from natsort import natsorted
 import pandas as pd
 import logger as l
-def cluster(Z_all ,ground_truth):
+
+device = 'cpu'
+# 聚类
+def cluster(Z_all, ground_truth):
     l.logger.info("[cluster] begin")
     learned_graph_from_matlab = Z_all
     sources, targets = learned_graph_from_matlab.nonzero()
@@ -33,4 +32,3 @@ def cluster(Z_all ,ground_truth):
     )
     ari = adjusted_rand_score(ground_truth, leiden_label)
     l.logger.info(f"[cluster] done ari={ari}")
-    pass

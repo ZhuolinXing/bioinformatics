@@ -73,6 +73,7 @@ def stACN(expression, spatial_network, gt, lamb=0.001, dim=100):
         l.logger.info(f'[RunCSolver]iter = {iter_} calculate E end')
 
         Z_tensor = np.stack(Zv, axis=2)
+        T_tensor = np.stack(T,axis=2)
         Ys_tensor = np.stack(Ys, axis=2)
         l.logger.info(f'[RunCSolver]iter = {iter_} wshrinkObj')
         t_tensor, objV = wshrinkObj(Z_tensor + 1 / mu * Ys_tensor, 1 / mu, sX, 0, 3)

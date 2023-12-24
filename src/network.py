@@ -4,8 +4,8 @@ from sklearn.neighbors import kneighbors_graph
 from sklearn.metrics.pairwise import cosine_similarity
 from tqdm import trange
 import scipy.sparse as sp
-
 from scipy.linalg import svd
+
 from sklearn.decomposition import TruncatedSVD
 def soft_numpy(x, T):
     if np.sum(np.abs(T)) == 0.:
@@ -210,7 +210,7 @@ def wshrinkObj(x, rho, sX, isWeight, mode):
         endValue = n3 // 2 + 1
 
     for i in range(endValue):
-        uhat, shat, vhat = np.linalg.svd(Yhat[:, :, i], full_matrices=False)
+        uhat, shat, vhat = svd(Yhat[:, :, i], full_matrices=False)
 
         if isWeight:
             weight = C / (np.diag(shat) + np.finfo(float).eps)
