@@ -1,0 +1,453 @@
+2023-12-24 04:09:16,501 INFO main.py:42  :  main args=Namespace(input_data_path='data', section_id='151675', output_data_path='output', value='value1')
+2023-12-24 04:09:16,501 INFO main.py:51  :  [LoadPkl] loading ...
+2023-12-24 04:09:16,577 INFO main.py:60  :  [LoadPkl]  done
+2023-12-24 04:09:16,908 INFO st_acn.py:61  :  [RunCSolver]iter = 0 calculate E
+2023-12-24 04:09:16,908 INFO st_acn.py:63  :  [RunCSolver]iter = 0 Opt_P E v_iter0
+2023-12-24 04:09:17,411 INFO st_acn.py:65  :  [RunCSolver]iter = 0 Opt_P E v_iter0 end
+2023-12-24 04:09:18,714 INFO st_acn.py:63  :  [RunCSolver]iter = 0 Opt_P E v_iter1
+2023-12-24 04:09:19,204 INFO st_acn.py:65  :  [RunCSolver]iter = 0 Opt_P E v_iter1 end
+2023-12-24 04:09:20,497 INFO st_acn.py:74  :  [RunCSolver]iter = 0 calculate E end
+2023-12-24 04:09:20,678 INFO st_acn.py:79  :  [RunCSolver]iter = 0 wshrinkObj
+2023-12-24 04:09:31,786 INFO st_acn.py:94  :  [RunCSolver]iter = 0 calculate  errp errs
+2023-12-24 04:09:32,082 INFO st_acn.py:99  :  [RunCSolver]iter = 0 max_err=5.86609573919177
+2023-12-24 04:09:32,082 INFO st_acn.py:61  :  [RunCSolver]iter = 1 calculate E
+2023-12-24 04:09:32,082 INFO st_acn.py:63  :  [RunCSolver]iter = 1 Opt_P E v_iter0
+2023-12-24 04:13:49,692 INFO st_acn.py:65  :  [RunCSolver]iter = 1 Opt_P E v_iter0 end
+2023-12-24 04:13:52,661 INFO st_acn.py:63  :  [RunCSolver]iter = 1 Opt_P E v_iter1
+2023-12-24 04:18:09,688 INFO st_acn.py:65  :  [RunCSolver]iter = 1 Opt_P E v_iter1 end
+2023-12-24 04:18:12,745 INFO st_acn.py:74  :  [RunCSolver]iter = 1 calculate E end
+2023-12-24 04:18:13,096 INFO st_acn.py:79  :  [RunCSolver]iter = 1 wshrinkObj
+2023-12-24 04:18:26,134 INFO st_acn.py:94  :  [RunCSolver]iter = 1 calculate  errp errs
+2023-12-24 04:18:26,405 INFO st_acn.py:99  :  [RunCSolver]iter = 1 max_err=25.317393698002014
+2023-12-24 04:18:26,405 INFO st_acn.py:61  :  [RunCSolver]iter = 2 calculate E
+2023-12-24 04:18:26,405 INFO st_acn.py:63  :  [RunCSolver]iter = 2 Opt_P E v_iter0
+2023-12-24 04:24:02,067 INFO st_acn.py:65  :  [RunCSolver]iter = 2 Opt_P E v_iter0 end
+2023-12-24 04:24:05,436 INFO st_acn.py:63  :  [RunCSolver]iter = 2 Opt_P E v_iter1
+2023-12-24 04:29:40,270 INFO st_acn.py:65  :  [RunCSolver]iter = 2 Opt_P E v_iter1 end
+2023-12-24 04:29:43,664 INFO st_acn.py:74  :  [RunCSolver]iter = 2 calculate E end
+2023-12-24 04:29:44,046 INFO st_acn.py:79  :  [RunCSolver]iter = 2 wshrinkObj
+2023-12-24 04:29:57,313 INFO st_acn.py:94  :  [RunCSolver]iter = 2 calculate  errp errs
+2023-12-24 04:29:57,584 INFO st_acn.py:99  :  [RunCSolver]iter = 2 max_err=26.388854788858538
+2023-12-24 04:29:57,584 INFO st_acn.py:61  :  [RunCSolver]iter = 3 calculate E
+2023-12-24 04:29:57,584 INFO st_acn.py:63  :  [RunCSolver]iter = 3 Opt_P E v_iter0
+2023-12-24 04:35:33,294 INFO st_acn.py:65  :  [RunCSolver]iter = 3 Opt_P E v_iter0 end
+2023-12-24 04:35:36,647 INFO st_acn.py:63  :  [RunCSolver]iter = 3 Opt_P E v_iter1
+2023-12-24 04:41:10,452 INFO st_acn.py:65  :  [RunCSolver]iter = 3 Opt_P E v_iter1 end
+2023-12-24 04:41:13,764 INFO st_acn.py:74  :  [RunCSolver]iter = 3 calculate E end
+2023-12-24 04:41:14,140 INFO st_acn.py:79  :  [RunCSolver]iter = 3 wshrinkObj
+2023-12-24 04:41:27,298 INFO st_acn.py:94  :  [RunCSolver]iter = 3 calculate  errp errs
+2023-12-24 04:41:27,558 INFO st_acn.py:99  :  [RunCSolver]iter = 3 max_err=19.333927038224957
+2023-12-24 04:41:27,558 INFO st_acn.py:61  :  [RunCSolver]iter = 4 calculate E
+2023-12-24 04:41:27,558 INFO st_acn.py:63  :  [RunCSolver]iter = 4 Opt_P E v_iter0
+2023-12-24 04:47:01,125 INFO st_acn.py:65  :  [RunCSolver]iter = 4 Opt_P E v_iter0 end
+2023-12-24 04:47:04,480 INFO st_acn.py:63  :  [RunCSolver]iter = 4 Opt_P E v_iter1
+2023-12-24 04:52:38,392 INFO st_acn.py:65  :  [RunCSolver]iter = 4 Opt_P E v_iter1 end
+2023-12-24 04:52:41,796 INFO st_acn.py:74  :  [RunCSolver]iter = 4 calculate E end
+2023-12-24 04:52:42,176 INFO st_acn.py:79  :  [RunCSolver]iter = 4 wshrinkObj
+2023-12-24 04:52:55,420 INFO st_acn.py:94  :  [RunCSolver]iter = 4 calculate  errp errs
+2023-12-24 04:52:55,680 INFO st_acn.py:99  :  [RunCSolver]iter = 4 max_err=13.904089809649374
+2023-12-24 04:52:55,680 INFO st_acn.py:61  :  [RunCSolver]iter = 5 calculate E
+2023-12-24 04:52:55,680 INFO st_acn.py:63  :  [RunCSolver]iter = 5 Opt_P E v_iter0
+2023-12-24 04:58:29,749 INFO st_acn.py:65  :  [RunCSolver]iter = 5 Opt_P E v_iter0 end
+2023-12-24 04:58:33,119 INFO st_acn.py:63  :  [RunCSolver]iter = 5 Opt_P E v_iter1
+2023-12-24 05:04:07,113 INFO st_acn.py:65  :  [RunCSolver]iter = 5 Opt_P E v_iter1 end
+2023-12-24 05:04:10,481 INFO st_acn.py:74  :  [RunCSolver]iter = 5 calculate E end
+2023-12-24 05:04:10,855 INFO st_acn.py:79  :  [RunCSolver]iter = 5 wshrinkObj
+2023-12-24 05:04:24,062 INFO st_acn.py:94  :  [RunCSolver]iter = 5 calculate  errp errs
+2023-12-24 05:04:24,335 INFO st_acn.py:99  :  [RunCSolver]iter = 5 max_err=11.207461651519447
+2023-12-24 05:04:24,335 INFO st_acn.py:61  :  [RunCSolver]iter = 6 calculate E
+2023-12-24 05:04:24,335 INFO st_acn.py:63  :  [RunCSolver]iter = 6 Opt_P E v_iter0
+2023-12-24 05:09:58,362 INFO st_acn.py:65  :  [RunCSolver]iter = 6 Opt_P E v_iter0 end
+2023-12-24 05:10:01,704 INFO st_acn.py:63  :  [RunCSolver]iter = 6 Opt_P E v_iter1
+2023-12-24 05:15:37,041 INFO st_acn.py:65  :  [RunCSolver]iter = 6 Opt_P E v_iter1 end
+2023-12-24 05:15:40,372 INFO st_acn.py:74  :  [RunCSolver]iter = 6 calculate E end
+2023-12-24 05:15:40,759 INFO st_acn.py:79  :  [RunCSolver]iter = 6 wshrinkObj
+2023-12-24 05:15:53,963 INFO st_acn.py:94  :  [RunCSolver]iter = 6 calculate  errp errs
+2023-12-24 05:15:54,243 INFO st_acn.py:99  :  [RunCSolver]iter = 6 max_err=9.432117895720245
+2023-12-24 05:15:54,243 INFO st_acn.py:61  :  [RunCSolver]iter = 7 calculate E
+2023-12-24 05:15:54,243 INFO st_acn.py:63  :  [RunCSolver]iter = 7 Opt_P E v_iter0
+2023-12-24 05:21:28,904 INFO st_acn.py:65  :  [RunCSolver]iter = 7 Opt_P E v_iter0 end
+2023-12-24 05:21:32,202 INFO st_acn.py:63  :  [RunCSolver]iter = 7 Opt_P E v_iter1
+2023-12-24 05:27:07,216 INFO st_acn.py:65  :  [RunCSolver]iter = 7 Opt_P E v_iter1 end
+2023-12-24 05:27:10,525 INFO st_acn.py:74  :  [RunCSolver]iter = 7 calculate E end
+2023-12-24 05:27:10,888 INFO st_acn.py:79  :  [RunCSolver]iter = 7 wshrinkObj
+2023-12-24 05:27:24,083 INFO st_acn.py:94  :  [RunCSolver]iter = 7 calculate  errp errs
+2023-12-24 05:27:24,353 INFO st_acn.py:99  :  [RunCSolver]iter = 7 max_err=8.497283353760762
+2023-12-24 05:27:24,353 INFO st_acn.py:61  :  [RunCSolver]iter = 8 calculate E
+2023-12-24 05:27:24,353 INFO st_acn.py:63  :  [RunCSolver]iter = 8 Opt_P E v_iter0
+2023-12-24 05:33:00,583 INFO st_acn.py:65  :  [RunCSolver]iter = 8 Opt_P E v_iter0 end
+2023-12-24 05:33:03,813 INFO st_acn.py:63  :  [RunCSolver]iter = 8 Opt_P E v_iter1
+2023-12-24 05:38:39,995 INFO st_acn.py:65  :  [RunCSolver]iter = 8 Opt_P E v_iter1 end
+2023-12-24 05:38:43,301 INFO st_acn.py:74  :  [RunCSolver]iter = 8 calculate E end
+2023-12-24 05:38:43,661 INFO st_acn.py:79  :  [RunCSolver]iter = 8 wshrinkObj
+2023-12-24 05:38:56,877 INFO st_acn.py:94  :  [RunCSolver]iter = 8 calculate  errp errs
+2023-12-24 05:38:57,267 INFO st_acn.py:99  :  [RunCSolver]iter = 8 max_err=8.380558398207672
+2023-12-24 05:38:57,267 INFO st_acn.py:61  :  [RunCSolver]iter = 9 calculate E
+2023-12-24 05:38:57,267 INFO st_acn.py:63  :  [RunCSolver]iter = 9 Opt_P E v_iter0
+2023-12-24 05:44:31,587 INFO st_acn.py:65  :  [RunCSolver]iter = 9 Opt_P E v_iter0 end
+2023-12-24 05:44:34,856 INFO st_acn.py:63  :  [RunCSolver]iter = 9 Opt_P E v_iter1
+2023-12-24 05:50:09,765 INFO st_acn.py:65  :  [RunCSolver]iter = 9 Opt_P E v_iter1 end
+2023-12-24 05:50:13,159 INFO st_acn.py:74  :  [RunCSolver]iter = 9 calculate E end
+2023-12-24 05:50:13,509 INFO st_acn.py:79  :  [RunCSolver]iter = 9 wshrinkObj
+2023-12-24 05:50:26,790 INFO st_acn.py:94  :  [RunCSolver]iter = 9 calculate  errp errs
+2023-12-24 05:50:27,210 INFO st_acn.py:99  :  [RunCSolver]iter = 9 max_err=7.9435030040805685
+2023-12-24 05:50:27,210 INFO st_acn.py:61  :  [RunCSolver]iter = 10 calculate E
+2023-12-24 05:50:27,210 INFO st_acn.py:63  :  [RunCSolver]iter = 10 Opt_P E v_iter0
+2023-12-24 05:56:04,721 INFO st_acn.py:65  :  [RunCSolver]iter = 10 Opt_P E v_iter0 end
+2023-12-24 05:56:08,080 INFO st_acn.py:63  :  [RunCSolver]iter = 10 Opt_P E v_iter1
+2023-12-24 06:01:44,819 INFO st_acn.py:65  :  [RunCSolver]iter = 10 Opt_P E v_iter1 end
+2023-12-24 06:01:48,196 INFO st_acn.py:74  :  [RunCSolver]iter = 10 calculate E end
+2023-12-24 06:01:48,516 INFO st_acn.py:79  :  [RunCSolver]iter = 10 wshrinkObj
+2023-12-24 06:02:01,810 INFO st_acn.py:94  :  [RunCSolver]iter = 10 calculate  errp errs
+2023-12-24 06:02:02,220 INFO st_acn.py:99  :  [RunCSolver]iter = 10 max_err=8.208882616073463
+2023-12-24 06:02:02,220 INFO st_acn.py:61  :  [RunCSolver]iter = 11 calculate E
+2023-12-24 06:02:02,220 INFO st_acn.py:63  :  [RunCSolver]iter = 11 Opt_P E v_iter0
+2023-12-24 06:07:37,115 INFO st_acn.py:65  :  [RunCSolver]iter = 11 Opt_P E v_iter0 end
+2023-12-24 06:07:40,413 INFO st_acn.py:63  :  [RunCSolver]iter = 11 Opt_P E v_iter1
+2023-12-24 06:13:15,246 INFO st_acn.py:65  :  [RunCSolver]iter = 11 Opt_P E v_iter1 end
+2023-12-24 06:13:18,599 INFO st_acn.py:74  :  [RunCSolver]iter = 11 calculate E end
+2023-12-24 06:13:18,971 INFO st_acn.py:79  :  [RunCSolver]iter = 11 wshrinkObj
+2023-12-24 06:13:32,192 INFO st_acn.py:94  :  [RunCSolver]iter = 11 calculate  errp errs
+2023-12-24 06:13:32,532 INFO st_acn.py:99  :  [RunCSolver]iter = 11 max_err=6.707944139532821
+2023-12-24 06:13:32,532 INFO st_acn.py:61  :  [RunCSolver]iter = 12 calculate E
+2023-12-24 06:13:32,532 INFO st_acn.py:63  :  [RunCSolver]iter = 12 Opt_P E v_iter0
+2023-12-24 06:19:08,237 INFO st_acn.py:65  :  [RunCSolver]iter = 12 Opt_P E v_iter0 end
+2023-12-24 06:19:11,576 INFO st_acn.py:63  :  [RunCSolver]iter = 12 Opt_P E v_iter1
+2023-12-24 06:24:46,127 INFO st_acn.py:65  :  [RunCSolver]iter = 12 Opt_P E v_iter1 end
+2023-12-24 06:24:49,503 INFO st_acn.py:74  :  [RunCSolver]iter = 12 calculate E end
+2023-12-24 06:24:49,865 INFO st_acn.py:79  :  [RunCSolver]iter = 12 wshrinkObj
+2023-12-24 06:25:03,276 INFO st_acn.py:94  :  [RunCSolver]iter = 12 calculate  errp errs
+2023-12-24 06:25:03,600 INFO st_acn.py:99  :  [RunCSolver]iter = 12 max_err=5.641426249702918
+2023-12-24 06:25:03,600 INFO st_acn.py:61  :  [RunCSolver]iter = 13 calculate E
+2023-12-24 06:25:03,600 INFO st_acn.py:63  :  [RunCSolver]iter = 13 Opt_P E v_iter0
+2023-12-24 06:30:38,477 INFO st_acn.py:65  :  [RunCSolver]iter = 13 Opt_P E v_iter0 end
+2023-12-24 06:30:41,809 INFO st_acn.py:63  :  [RunCSolver]iter = 13 Opt_P E v_iter1
+2023-12-24 06:36:16,608 INFO st_acn.py:65  :  [RunCSolver]iter = 13 Opt_P E v_iter1 end
+2023-12-24 06:36:19,966 INFO st_acn.py:74  :  [RunCSolver]iter = 13 calculate E end
+2023-12-24 06:36:20,362 INFO st_acn.py:79  :  [RunCSolver]iter = 13 wshrinkObj
+2023-12-24 06:36:33,573 INFO st_acn.py:94  :  [RunCSolver]iter = 13 calculate  errp errs
+2023-12-24 06:36:33,894 INFO st_acn.py:99  :  [RunCSolver]iter = 13 max_err=8.17498240164387
+2023-12-24 06:36:33,894 INFO st_acn.py:61  :  [RunCSolver]iter = 14 calculate E
+2023-12-24 06:36:33,894 INFO st_acn.py:63  :  [RunCSolver]iter = 14 Opt_P E v_iter0
+2023-12-24 06:42:11,748 INFO st_acn.py:65  :  [RunCSolver]iter = 14 Opt_P E v_iter0 end
+2023-12-24 06:42:15,018 INFO st_acn.py:63  :  [RunCSolver]iter = 14 Opt_P E v_iter1
+2023-12-24 06:47:52,963 INFO st_acn.py:65  :  [RunCSolver]iter = 14 Opt_P E v_iter1 end
+2023-12-24 06:47:56,300 INFO st_acn.py:74  :  [RunCSolver]iter = 14 calculate E end
+2023-12-24 06:47:56,643 INFO st_acn.py:79  :  [RunCSolver]iter = 14 wshrinkObj
+2023-12-24 06:48:10,065 INFO st_acn.py:94  :  [RunCSolver]iter = 14 calculate  errp errs
+2023-12-24 06:48:10,385 INFO st_acn.py:99  :  [RunCSolver]iter = 14 max_err=11.19848709589548
+2023-12-24 06:48:10,385 INFO st_acn.py:61  :  [RunCSolver]iter = 15 calculate E
+2023-12-24 06:48:10,385 INFO st_acn.py:63  :  [RunCSolver]iter = 15 Opt_P E v_iter0
+2023-12-24 06:53:47,835 INFO st_acn.py:65  :  [RunCSolver]iter = 15 Opt_P E v_iter0 end
+2023-12-24 06:53:51,189 INFO st_acn.py:63  :  [RunCSolver]iter = 15 Opt_P E v_iter1
+2023-12-24 06:59:28,830 INFO st_acn.py:65  :  [RunCSolver]iter = 15 Opt_P E v_iter1 end
+2023-12-24 06:59:32,216 INFO st_acn.py:74  :  [RunCSolver]iter = 15 calculate E end
+2023-12-24 06:59:32,558 INFO st_acn.py:79  :  [RunCSolver]iter = 15 wshrinkObj
+2023-12-24 06:59:46,847 INFO st_acn.py:94  :  [RunCSolver]iter = 15 calculate  errp errs
+2023-12-24 06:59:47,197 INFO st_acn.py:99  :  [RunCSolver]iter = 15 max_err=12.918099185317903
+2023-12-24 06:59:47,197 INFO st_acn.py:61  :  [RunCSolver]iter = 16 calculate E
+2023-12-24 06:59:47,197 INFO st_acn.py:63  :  [RunCSolver]iter = 16 Opt_P E v_iter0
+2023-12-24 07:05:22,470 INFO st_acn.py:65  :  [RunCSolver]iter = 16 Opt_P E v_iter0 end
+2023-12-24 07:05:25,857 INFO st_acn.py:63  :  [RunCSolver]iter = 16 Opt_P E v_iter1
+2023-12-24 07:11:01,315 INFO st_acn.py:65  :  [RunCSolver]iter = 16 Opt_P E v_iter1 end
+2023-12-24 07:11:04,721 INFO st_acn.py:74  :  [RunCSolver]iter = 16 calculate E end
+2023-12-24 07:11:05,094 INFO st_acn.py:79  :  [RunCSolver]iter = 16 wshrinkObj
+2023-12-24 07:11:18,375 INFO st_acn.py:94  :  [RunCSolver]iter = 16 calculate  errp errs
+2023-12-24 07:11:18,726 INFO st_acn.py:99  :  [RunCSolver]iter = 16 max_err=16.34340446421415
+2023-12-24 07:11:18,727 INFO st_acn.py:61  :  [RunCSolver]iter = 17 calculate E
+2023-12-24 07:11:18,728 INFO st_acn.py:63  :  [RunCSolver]iter = 17 Opt_P E v_iter0
+2023-12-24 07:16:54,234 INFO st_acn.py:65  :  [RunCSolver]iter = 17 Opt_P E v_iter0 end
+2023-12-24 07:16:57,512 INFO st_acn.py:63  :  [RunCSolver]iter = 17 Opt_P E v_iter1
+2023-12-24 07:22:33,745 INFO st_acn.py:65  :  [RunCSolver]iter = 17 Opt_P E v_iter1 end
+2023-12-24 07:22:37,136 INFO st_acn.py:74  :  [RunCSolver]iter = 17 calculate E end
+2023-12-24 07:22:37,466 INFO st_acn.py:79  :  [RunCSolver]iter = 17 wshrinkObj
+2023-12-24 07:22:50,686 INFO st_acn.py:94  :  [RunCSolver]iter = 17 calculate  errp errs
+2023-12-24 07:22:51,020 INFO st_acn.py:99  :  [RunCSolver]iter = 17 max_err=19.71311276587788
+2023-12-24 07:22:51,030 INFO st_acn.py:61  :  [RunCSolver]iter = 18 calculate E
+2023-12-24 07:22:51,030 INFO st_acn.py:63  :  [RunCSolver]iter = 18 Opt_P E v_iter0
+2023-12-24 07:28:25,892 INFO st_acn.py:65  :  [RunCSolver]iter = 18 Opt_P E v_iter0 end
+2023-12-24 07:28:29,265 INFO st_acn.py:63  :  [RunCSolver]iter = 18 Opt_P E v_iter1
+2023-12-24 07:34:03,675 INFO st_acn.py:65  :  [RunCSolver]iter = 18 Opt_P E v_iter1 end
+2023-12-24 07:34:07,090 INFO st_acn.py:74  :  [RunCSolver]iter = 18 calculate E end
+2023-12-24 07:34:07,430 INFO st_acn.py:79  :  [RunCSolver]iter = 18 wshrinkObj
+2023-12-24 07:34:20,530 INFO st_acn.py:94  :  [RunCSolver]iter = 18 calculate  errp errs
+2023-12-24 07:34:20,863 INFO st_acn.py:99  :  [RunCSolver]iter = 18 max_err=21.453496467306525
+2023-12-24 07:34:20,863 INFO st_acn.py:61  :  [RunCSolver]iter = 19 calculate E
+2023-12-24 07:34:20,863 INFO st_acn.py:63  :  [RunCSolver]iter = 19 Opt_P E v_iter0
+2023-12-24 07:39:55,198 INFO st_acn.py:65  :  [RunCSolver]iter = 19 Opt_P E v_iter0 end
+2023-12-24 07:39:58,489 INFO st_acn.py:63  :  [RunCSolver]iter = 19 Opt_P E v_iter1
+2023-12-24 07:45:32,912 INFO st_acn.py:65  :  [RunCSolver]iter = 19 Opt_P E v_iter1 end
+2023-12-24 07:45:36,191 INFO st_acn.py:74  :  [RunCSolver]iter = 19 calculate E end
+2023-12-24 07:45:36,523 INFO st_acn.py:79  :  [RunCSolver]iter = 19 wshrinkObj
+2023-12-24 07:45:49,955 INFO st_acn.py:94  :  [RunCSolver]iter = 19 calculate  errp errs
+2023-12-24 07:45:50,328 INFO st_acn.py:99  :  [RunCSolver]iter = 19 max_err=26.815839273138153
+2023-12-24 07:45:50,328 INFO st_acn.py:61  :  [RunCSolver]iter = 20 calculate E
+2023-12-24 07:45:50,328 INFO st_acn.py:63  :  [RunCSolver]iter = 20 Opt_P E v_iter0
+2023-12-24 07:51:25,546 INFO st_acn.py:65  :  [RunCSolver]iter = 20 Opt_P E v_iter0 end
+2023-12-24 07:51:28,800 INFO st_acn.py:63  :  [RunCSolver]iter = 20 Opt_P E v_iter1
+2023-12-24 07:57:03,263 INFO st_acn.py:65  :  [RunCSolver]iter = 20 Opt_P E v_iter1 end
+2023-12-24 07:57:06,565 INFO st_acn.py:74  :  [RunCSolver]iter = 20 calculate E end
+2023-12-24 07:57:06,925 INFO st_acn.py:79  :  [RunCSolver]iter = 20 wshrinkObj
+2023-12-24 07:57:20,064 INFO st_acn.py:94  :  [RunCSolver]iter = 20 calculate  errp errs
+2023-12-24 07:57:20,388 INFO st_acn.py:99  :  [RunCSolver]iter = 20 max_err=30.41258756131922
+2023-12-24 07:57:20,388 INFO st_acn.py:61  :  [RunCSolver]iter = 21 calculate E
+2023-12-24 07:57:20,388 INFO st_acn.py:63  :  [RunCSolver]iter = 21 Opt_P E v_iter0
+2023-12-24 08:02:55,240 INFO st_acn.py:65  :  [RunCSolver]iter = 21 Opt_P E v_iter0 end
+2023-12-24 08:02:58,556 INFO st_acn.py:63  :  [RunCSolver]iter = 21 Opt_P E v_iter1
+2023-12-24 08:08:33,576 INFO st_acn.py:65  :  [RunCSolver]iter = 21 Opt_P E v_iter1 end
+2023-12-24 08:08:36,882 INFO st_acn.py:74  :  [RunCSolver]iter = 21 calculate E end
+2023-12-24 08:08:37,272 INFO st_acn.py:79  :  [RunCSolver]iter = 21 wshrinkObj
+2023-12-24 08:08:50,331 INFO st_acn.py:94  :  [RunCSolver]iter = 21 calculate  errp errs
+2023-12-24 08:08:50,651 INFO st_acn.py:99  :  [RunCSolver]iter = 21 max_err=35.14357271305003
+2023-12-24 08:08:50,651 INFO st_acn.py:61  :  [RunCSolver]iter = 22 calculate E
+2023-12-24 08:08:50,661 INFO st_acn.py:63  :  [RunCSolver]iter = 22 Opt_P E v_iter0
+2023-12-24 08:14:25,280 INFO st_acn.py:65  :  [RunCSolver]iter = 22 Opt_P E v_iter0 end
+2023-12-24 08:14:28,631 INFO st_acn.py:63  :  [RunCSolver]iter = 22 Opt_P E v_iter1
+2023-12-24 08:20:03,845 INFO st_acn.py:65  :  [RunCSolver]iter = 22 Opt_P E v_iter1 end
+2023-12-24 08:20:07,193 INFO st_acn.py:74  :  [RunCSolver]iter = 22 calculate E end
+2023-12-24 08:20:07,529 INFO st_acn.py:79  :  [RunCSolver]iter = 22 wshrinkObj
+2023-12-24 08:20:20,672 INFO st_acn.py:94  :  [RunCSolver]iter = 22 calculate  errp errs
+2023-12-24 08:20:21,005 INFO st_acn.py:99  :  [RunCSolver]iter = 22 max_err=36.2331113071205
+2023-12-24 08:20:21,005 INFO st_acn.py:61  :  [RunCSolver]iter = 23 calculate E
+2023-12-24 08:20:21,005 INFO st_acn.py:63  :  [RunCSolver]iter = 23 Opt_P E v_iter0
+2023-12-24 08:25:55,269 INFO st_acn.py:65  :  [RunCSolver]iter = 23 Opt_P E v_iter0 end
+2023-12-24 08:25:58,536 INFO st_acn.py:63  :  [RunCSolver]iter = 23 Opt_P E v_iter1
+2023-12-24 08:31:34,239 INFO st_acn.py:65  :  [RunCSolver]iter = 23 Opt_P E v_iter1 end
+2023-12-24 08:31:37,640 INFO st_acn.py:74  :  [RunCSolver]iter = 23 calculate E end
+2023-12-24 08:31:38,027 INFO st_acn.py:79  :  [RunCSolver]iter = 23 wshrinkObj
+2023-12-24 08:31:51,140 INFO st_acn.py:94  :  [RunCSolver]iter = 23 calculate  errp errs
+2023-12-24 08:31:51,460 INFO st_acn.py:99  :  [RunCSolver]iter = 23 max_err=38.58367653898112
+2023-12-24 08:31:51,460 INFO st_acn.py:61  :  [RunCSolver]iter = 24 calculate E
+2023-12-24 08:31:51,460 INFO st_acn.py:63  :  [RunCSolver]iter = 24 Opt_P E v_iter0
+2023-12-24 08:37:25,750 INFO st_acn.py:65  :  [RunCSolver]iter = 24 Opt_P E v_iter0 end
+2023-12-24 08:37:28,968 INFO st_acn.py:63  :  [RunCSolver]iter = 24 Opt_P E v_iter1
+2023-12-24 08:43:03,521 INFO st_acn.py:65  :  [RunCSolver]iter = 24 Opt_P E v_iter1 end
+2023-12-24 08:43:06,848 INFO st_acn.py:74  :  [RunCSolver]iter = 24 calculate E end
+2023-12-24 08:43:07,247 INFO st_acn.py:79  :  [RunCSolver]iter = 24 wshrinkObj
+2023-12-24 08:43:20,868 INFO st_acn.py:94  :  [RunCSolver]iter = 24 calculate  errp errs
+2023-12-24 08:43:21,210 INFO st_acn.py:99  :  [RunCSolver]iter = 24 max_err=39.52369573686821
+2023-12-24 08:43:21,210 INFO st_acn.py:61  :  [RunCSolver]iter = 25 calculate E
+2023-12-24 08:43:21,210 INFO st_acn.py:63  :  [RunCSolver]iter = 25 Opt_P E v_iter0
+2023-12-24 08:48:55,589 INFO st_acn.py:65  :  [RunCSolver]iter = 25 Opt_P E v_iter0 end
+2023-12-24 08:48:58,861 INFO st_acn.py:63  :  [RunCSolver]iter = 25 Opt_P E v_iter1
+2023-12-24 08:54:34,418 INFO st_acn.py:65  :  [RunCSolver]iter = 25 Opt_P E v_iter1 end
+2023-12-24 08:54:37,750 INFO st_acn.py:74  :  [RunCSolver]iter = 25 calculate E end
+2023-12-24 08:54:38,161 INFO st_acn.py:79  :  [RunCSolver]iter = 25 wshrinkObj
+2023-12-24 08:54:51,235 INFO st_acn.py:94  :  [RunCSolver]iter = 25 calculate  errp errs
+2023-12-24 08:54:51,558 INFO st_acn.py:99  :  [RunCSolver]iter = 25 max_err=39.87966181982287
+2023-12-24 08:54:51,558 INFO st_acn.py:61  :  [RunCSolver]iter = 26 calculate E
+2023-12-24 08:54:51,558 INFO st_acn.py:63  :  [RunCSolver]iter = 26 Opt_P E v_iter0
+2023-12-24 09:00:26,322 INFO st_acn.py:65  :  [RunCSolver]iter = 26 Opt_P E v_iter0 end
+2023-12-24 09:00:29,670 INFO st_acn.py:63  :  [RunCSolver]iter = 26 Opt_P E v_iter1
+2023-12-24 09:06:04,221 INFO st_acn.py:65  :  [RunCSolver]iter = 26 Opt_P E v_iter1 end
+2023-12-24 09:06:07,509 INFO st_acn.py:74  :  [RunCSolver]iter = 26 calculate E end
+2023-12-24 09:06:07,880 INFO st_acn.py:79  :  [RunCSolver]iter = 26 wshrinkObj
+2023-12-24 09:06:21,112 INFO st_acn.py:94  :  [RunCSolver]iter = 26 calculate  errp errs
+2023-12-24 09:06:21,442 INFO st_acn.py:99  :  [RunCSolver]iter = 26 max_err=42.00236171737868
+2023-12-24 09:06:21,442 INFO st_acn.py:61  :  [RunCSolver]iter = 27 calculate E
+2023-12-24 09:06:21,442 INFO st_acn.py:63  :  [RunCSolver]iter = 27 Opt_P E v_iter0
+2023-12-24 09:11:58,566 INFO st_acn.py:65  :  [RunCSolver]iter = 27 Opt_P E v_iter0 end
+2023-12-24 09:12:01,860 INFO st_acn.py:63  :  [RunCSolver]iter = 27 Opt_P E v_iter1
+2023-12-24 09:17:38,727 INFO st_acn.py:65  :  [RunCSolver]iter = 27 Opt_P E v_iter1 end
+2023-12-24 09:17:41,958 INFO st_acn.py:74  :  [RunCSolver]iter = 27 calculate E end
+2023-12-24 09:17:42,348 INFO st_acn.py:79  :  [RunCSolver]iter = 27 wshrinkObj
+2023-12-24 09:17:55,524 INFO st_acn.py:94  :  [RunCSolver]iter = 27 calculate  errp errs
+2023-12-24 09:17:55,855 INFO st_acn.py:99  :  [RunCSolver]iter = 27 max_err=40.5313149062148
+2023-12-24 09:17:55,855 INFO st_acn.py:61  :  [RunCSolver]iter = 28 calculate E
+2023-12-24 09:17:55,855 INFO st_acn.py:63  :  [RunCSolver]iter = 28 Opt_P E v_iter0
+2023-12-24 09:23:33,083 INFO st_acn.py:65  :  [RunCSolver]iter = 28 Opt_P E v_iter0 end
+2023-12-24 09:23:36,395 INFO st_acn.py:63  :  [RunCSolver]iter = 28 Opt_P E v_iter1
+2023-12-24 09:29:12,540 INFO st_acn.py:65  :  [RunCSolver]iter = 28 Opt_P E v_iter1 end
+2023-12-24 09:29:15,818 INFO st_acn.py:74  :  [RunCSolver]iter = 28 calculate E end
+2023-12-24 09:29:16,217 INFO st_acn.py:79  :  [RunCSolver]iter = 28 wshrinkObj
+2023-12-24 09:29:29,415 INFO st_acn.py:94  :  [RunCSolver]iter = 28 calculate  errp errs
+2023-12-24 09:29:29,745 INFO st_acn.py:99  :  [RunCSolver]iter = 28 max_err=42.879762969789724
+2023-12-24 09:29:29,745 INFO st_acn.py:61  :  [RunCSolver]iter = 29 calculate E
+2023-12-24 09:29:29,745 INFO st_acn.py:63  :  [RunCSolver]iter = 29 Opt_P E v_iter0
+2023-12-24 09:35:04,857 INFO st_acn.py:65  :  [RunCSolver]iter = 29 Opt_P E v_iter0 end
+2023-12-24 09:35:08,300 INFO st_acn.py:63  :  [RunCSolver]iter = 29 Opt_P E v_iter1
+2023-12-24 09:40:43,435 INFO st_acn.py:65  :  [RunCSolver]iter = 29 Opt_P E v_iter1 end
+2023-12-24 09:40:46,856 INFO st_acn.py:74  :  [RunCSolver]iter = 29 calculate E end
+2023-12-24 09:40:47,221 INFO st_acn.py:79  :  [RunCSolver]iter = 29 wshrinkObj
+2023-12-24 09:41:00,444 INFO st_acn.py:94  :  [RunCSolver]iter = 29 calculate  errp errs
+2023-12-24 09:41:00,767 INFO st_acn.py:99  :  [RunCSolver]iter = 29 max_err=42.89192616280209
+2023-12-24 09:41:00,777 INFO st_acn.py:61  :  [RunCSolver]iter = 30 calculate E
+2023-12-24 09:41:00,777 INFO st_acn.py:63  :  [RunCSolver]iter = 30 Opt_P E v_iter0
+2023-12-24 09:46:36,151 INFO st_acn.py:65  :  [RunCSolver]iter = 30 Opt_P E v_iter0 end
+2023-12-24 09:46:39,458 INFO st_acn.py:63  :  [RunCSolver]iter = 30 Opt_P E v_iter1
+2023-12-24 09:52:15,394 INFO st_acn.py:65  :  [RunCSolver]iter = 30 Opt_P E v_iter1 end
+2023-12-24 09:52:18,759 INFO st_acn.py:74  :  [RunCSolver]iter = 30 calculate E end
+2023-12-24 09:52:19,139 INFO st_acn.py:79  :  [RunCSolver]iter = 30 wshrinkObj
+2023-12-24 09:52:32,764 INFO st_acn.py:94  :  [RunCSolver]iter = 30 calculate  errp errs
+2023-12-24 09:52:33,134 INFO st_acn.py:99  :  [RunCSolver]iter = 30 max_err=40.52870517296768
+2023-12-24 09:52:33,144 INFO st_acn.py:61  :  [RunCSolver]iter = 31 calculate E
+2023-12-24 09:52:33,144 INFO st_acn.py:63  :  [RunCSolver]iter = 31 Opt_P E v_iter0
+2023-12-24 09:58:08,244 INFO st_acn.py:65  :  [RunCSolver]iter = 31 Opt_P E v_iter0 end
+2023-12-24 09:58:11,894 INFO st_acn.py:63  :  [RunCSolver]iter = 31 Opt_P E v_iter1
+2023-12-24 10:03:48,473 INFO st_acn.py:65  :  [RunCSolver]iter = 31 Opt_P E v_iter1 end
+2023-12-24 10:03:51,886 INFO st_acn.py:74  :  [RunCSolver]iter = 31 calculate E end
+2023-12-24 10:03:52,248 INFO st_acn.py:79  :  [RunCSolver]iter = 31 wshrinkObj
+2023-12-24 10:04:05,438 INFO st_acn.py:94  :  [RunCSolver]iter = 31 calculate  errp errs
+2023-12-24 10:04:05,772 INFO st_acn.py:99  :  [RunCSolver]iter = 31 max_err=46.498794582178796
+2023-12-24 10:04:05,774 INFO st_acn.py:61  :  [RunCSolver]iter = 32 calculate E
+2023-12-24 10:04:05,774 INFO st_acn.py:63  :  [RunCSolver]iter = 32 Opt_P E v_iter0
+2023-12-24 10:09:42,708 INFO st_acn.py:65  :  [RunCSolver]iter = 32 Opt_P E v_iter0 end
+2023-12-24 10:09:46,102 INFO st_acn.py:63  :  [RunCSolver]iter = 32 Opt_P E v_iter1
+2023-12-24 10:15:21,139 INFO st_acn.py:65  :  [RunCSolver]iter = 32 Opt_P E v_iter1 end
+2023-12-24 10:15:24,577 INFO st_acn.py:74  :  [RunCSolver]iter = 32 calculate E end
+2023-12-24 10:15:24,970 INFO st_acn.py:79  :  [RunCSolver]iter = 32 wshrinkObj
+2023-12-24 10:15:38,271 INFO st_acn.py:94  :  [RunCSolver]iter = 32 calculate  errp errs
+2023-12-24 10:15:38,605 INFO st_acn.py:99  :  [RunCSolver]iter = 32 max_err=49.23753953456777
+2023-12-24 10:15:38,605 INFO st_acn.py:61  :  [RunCSolver]iter = 33 calculate E
+2023-12-24 10:15:38,605 INFO st_acn.py:63  :  [RunCSolver]iter = 33 Opt_P E v_iter0
+2023-12-24 10:21:13,069 INFO st_acn.py:65  :  [RunCSolver]iter = 33 Opt_P E v_iter0 end
+2023-12-24 10:21:16,429 INFO st_acn.py:63  :  [RunCSolver]iter = 33 Opt_P E v_iter1
+2023-12-24 10:26:50,441 INFO st_acn.py:65  :  [RunCSolver]iter = 33 Opt_P E v_iter1 end
+2023-12-24 10:26:53,715 INFO st_acn.py:74  :  [RunCSolver]iter = 33 calculate E end
+2023-12-24 10:26:54,116 INFO st_acn.py:79  :  [RunCSolver]iter = 33 wshrinkObj
+2023-12-24 10:27:07,197 INFO st_acn.py:94  :  [RunCSolver]iter = 33 calculate  errp errs
+2023-12-24 10:27:07,527 INFO st_acn.py:99  :  [RunCSolver]iter = 33 max_err=46.360373810739695
+2023-12-24 10:27:07,537 INFO st_acn.py:61  :  [RunCSolver]iter = 34 calculate E
+2023-12-24 10:27:07,537 INFO st_acn.py:63  :  [RunCSolver]iter = 34 Opt_P E v_iter0
+2023-12-24 10:32:44,266 INFO st_acn.py:65  :  [RunCSolver]iter = 34 Opt_P E v_iter0 end
+2023-12-24 10:32:47,985 INFO st_acn.py:63  :  [RunCSolver]iter = 34 Opt_P E v_iter1
+2023-12-24 10:38:41,347 INFO st_acn.py:65  :  [RunCSolver]iter = 34 Opt_P E v_iter1 end
+2023-12-24 10:38:44,783 INFO st_acn.py:74  :  [RunCSolver]iter = 34 calculate E end
+2023-12-24 10:38:45,182 INFO st_acn.py:79  :  [RunCSolver]iter = 34 wshrinkObj
+2023-12-24 10:38:58,887 INFO st_acn.py:94  :  [RunCSolver]iter = 34 calculate  errp errs
+2023-12-24 10:38:59,254 INFO st_acn.py:99  :  [RunCSolver]iter = 34 max_err=60.44296262409141
+2023-12-24 10:38:59,255 INFO st_acn.py:61  :  [RunCSolver]iter = 35 calculate E
+2023-12-24 10:38:59,255 INFO st_acn.py:63  :  [RunCSolver]iter = 35 Opt_P E v_iter0
+2023-12-24 10:44:47,911 INFO st_acn.py:65  :  [RunCSolver]iter = 35 Opt_P E v_iter0 end
+2023-12-24 10:44:51,203 INFO st_acn.py:63  :  [RunCSolver]iter = 35 Opt_P E v_iter1
+2023-12-24 10:50:26,908 INFO st_acn.py:65  :  [RunCSolver]iter = 35 Opt_P E v_iter1 end
+2023-12-24 10:50:30,279 INFO st_acn.py:74  :  [RunCSolver]iter = 35 calculate E end
+2023-12-24 10:50:30,678 INFO st_acn.py:79  :  [RunCSolver]iter = 35 wshrinkObj
+2023-12-24 10:50:44,155 INFO st_acn.py:94  :  [RunCSolver]iter = 35 calculate  errp errs
+2023-12-24 10:50:44,476 INFO st_acn.py:99  :  [RunCSolver]iter = 35 max_err=82.95634872742984
+2023-12-24 10:50:44,477 INFO st_acn.py:61  :  [RunCSolver]iter = 36 calculate E
+2023-12-24 10:50:44,477 INFO st_acn.py:63  :  [RunCSolver]iter = 36 Opt_P E v_iter0
+2023-12-24 10:56:20,440 INFO st_acn.py:65  :  [RunCSolver]iter = 36 Opt_P E v_iter0 end
+2023-12-24 10:56:23,609 INFO st_acn.py:63  :  [RunCSolver]iter = 36 Opt_P E v_iter1
+2023-12-24 11:01:59,925 INFO st_acn.py:65  :  [RunCSolver]iter = 36 Opt_P E v_iter1 end
+2023-12-24 11:02:03,050 INFO st_acn.py:74  :  [RunCSolver]iter = 36 calculate E end
+2023-12-24 11:02:03,432 INFO st_acn.py:79  :  [RunCSolver]iter = 36 wshrinkObj
+2023-12-24 11:02:16,573 INFO st_acn.py:94  :  [RunCSolver]iter = 36 calculate  errp errs
+2023-12-24 11:02:16,894 INFO st_acn.py:99  :  [RunCSolver]iter = 36 max_err=131.74384915020764
+2023-12-24 11:02:16,895 INFO st_acn.py:61  :  [RunCSolver]iter = 37 calculate E
+2023-12-24 11:02:16,895 INFO st_acn.py:63  :  [RunCSolver]iter = 37 Opt_P E v_iter0
+2023-12-24 11:07:52,172 INFO st_acn.py:65  :  [RunCSolver]iter = 37 Opt_P E v_iter0 end
+2023-12-24 11:07:55,411 INFO st_acn.py:63  :  [RunCSolver]iter = 37 Opt_P E v_iter1
+2023-12-24 11:13:31,103 INFO st_acn.py:65  :  [RunCSolver]iter = 37 Opt_P E v_iter1 end
+2023-12-24 11:13:34,238 INFO st_acn.py:74  :  [RunCSolver]iter = 37 calculate E end
+2023-12-24 11:13:34,586 INFO st_acn.py:79  :  [RunCSolver]iter = 37 wshrinkObj
+2023-12-24 11:13:47,779 INFO st_acn.py:94  :  [RunCSolver]iter = 37 calculate  errp errs
+2023-12-24 11:13:48,125 INFO st_acn.py:99  :  [RunCSolver]iter = 37 max_err=191.9029792113302
+2023-12-24 11:13:48,125 INFO st_acn.py:61  :  [RunCSolver]iter = 38 calculate E
+2023-12-24 11:13:48,125 INFO st_acn.py:63  :  [RunCSolver]iter = 38 Opt_P E v_iter0
+2023-12-24 11:19:23,132 INFO st_acn.py:65  :  [RunCSolver]iter = 38 Opt_P E v_iter0 end
+2023-12-24 11:19:26,409 INFO st_acn.py:63  :  [RunCSolver]iter = 38 Opt_P E v_iter1
+2023-12-24 11:25:01,295 INFO st_acn.py:65  :  [RunCSolver]iter = 38 Opt_P E v_iter1 end
+2023-12-24 11:25:04,665 INFO st_acn.py:74  :  [RunCSolver]iter = 38 calculate E end
+2023-12-24 11:25:05,018 INFO st_acn.py:79  :  [RunCSolver]iter = 38 wshrinkObj
+2023-12-24 11:25:18,176 INFO st_acn.py:94  :  [RunCSolver]iter = 38 calculate  errp errs
+2023-12-24 11:25:18,496 INFO st_acn.py:99  :  [RunCSolver]iter = 38 max_err=261.16258074571454
+2023-12-24 11:25:18,496 INFO st_acn.py:61  :  [RunCSolver]iter = 39 calculate E
+2023-12-24 11:25:18,496 INFO st_acn.py:63  :  [RunCSolver]iter = 39 Opt_P E v_iter0
+2023-12-24 11:30:52,858 INFO st_acn.py:65  :  [RunCSolver]iter = 39 Opt_P E v_iter0 end
+2023-12-24 11:30:56,086 INFO st_acn.py:63  :  [RunCSolver]iter = 39 Opt_P E v_iter1
+2023-12-24 11:36:30,687 INFO st_acn.py:65  :  [RunCSolver]iter = 39 Opt_P E v_iter1 end
+2023-12-24 11:36:33,948 INFO st_acn.py:74  :  [RunCSolver]iter = 39 calculate E end
+2023-12-24 11:36:34,361 INFO st_acn.py:79  :  [RunCSolver]iter = 39 wshrinkObj
+2023-12-24 11:36:47,533 INFO st_acn.py:94  :  [RunCSolver]iter = 39 calculate  errp errs
+2023-12-24 11:36:47,857 INFO st_acn.py:99  :  [RunCSolver]iter = 39 max_err=387.19657550458294
+2023-12-24 11:36:47,857 INFO st_acn.py:61  :  [RunCSolver]iter = 40 calculate E
+2023-12-24 11:36:47,857 INFO st_acn.py:63  :  [RunCSolver]iter = 40 Opt_P E v_iter0
+2023-12-24 11:42:22,294 INFO st_acn.py:65  :  [RunCSolver]iter = 40 Opt_P E v_iter0 end
+2023-12-24 11:42:25,613 INFO st_acn.py:63  :  [RunCSolver]iter = 40 Opt_P E v_iter1
+2023-12-24 11:48:00,570 INFO st_acn.py:65  :  [RunCSolver]iter = 40 Opt_P E v_iter1 end
+2023-12-24 11:48:03,919 INFO st_acn.py:74  :  [RunCSolver]iter = 40 calculate E end
+2023-12-24 11:48:04,317 INFO st_acn.py:79  :  [RunCSolver]iter = 40 wshrinkObj
+2023-12-24 11:48:17,713 INFO st_acn.py:94  :  [RunCSolver]iter = 40 calculate  errp errs
+2023-12-24 11:48:18,036 INFO st_acn.py:99  :  [RunCSolver]iter = 40 max_err=573.0334283084941
+2023-12-24 11:48:18,036 INFO st_acn.py:61  :  [RunCSolver]iter = 41 calculate E
+2023-12-24 11:48:18,036 INFO st_acn.py:63  :  [RunCSolver]iter = 41 Opt_P E v_iter0
+2023-12-24 11:53:55,639 INFO st_acn.py:65  :  [RunCSolver]iter = 41 Opt_P E v_iter0 end
+2023-12-24 11:53:58,986 INFO st_acn.py:63  :  [RunCSolver]iter = 41 Opt_P E v_iter1
+2023-12-24 11:59:34,994 INFO st_acn.py:65  :  [RunCSolver]iter = 41 Opt_P E v_iter1 end
+2023-12-24 11:59:38,362 INFO st_acn.py:74  :  [RunCSolver]iter = 41 calculate E end
+2023-12-24 11:59:38,692 INFO st_acn.py:79  :  [RunCSolver]iter = 41 wshrinkObj
+2023-12-24 11:59:51,933 INFO st_acn.py:94  :  [RunCSolver]iter = 41 calculate  errp errs
+2023-12-24 11:59:52,283 INFO st_acn.py:99  :  [RunCSolver]iter = 41 max_err=815.642377121725
+2023-12-24 11:59:52,283 INFO st_acn.py:61  :  [RunCSolver]iter = 42 calculate E
+2023-12-24 11:59:52,283 INFO st_acn.py:63  :  [RunCSolver]iter = 42 Opt_P E v_iter0
+2023-12-24 12:05:27,209 INFO st_acn.py:65  :  [RunCSolver]iter = 42 Opt_P E v_iter0 end
+2023-12-24 12:05:30,541 INFO st_acn.py:63  :  [RunCSolver]iter = 42 Opt_P E v_iter1
+2023-12-24 12:11:04,827 INFO st_acn.py:65  :  [RunCSolver]iter = 42 Opt_P E v_iter1 end
+2023-12-24 12:11:08,146 INFO st_acn.py:74  :  [RunCSolver]iter = 42 calculate E end
+2023-12-24 12:11:08,542 INFO st_acn.py:79  :  [RunCSolver]iter = 42 wshrinkObj
+2023-12-24 12:11:21,868 INFO st_acn.py:94  :  [RunCSolver]iter = 42 calculate  errp errs
+2023-12-24 12:11:22,208 INFO st_acn.py:99  :  [RunCSolver]iter = 42 max_err=1146.595017252403
+2023-12-24 12:11:22,208 INFO st_acn.py:61  :  [RunCSolver]iter = 43 calculate E
+2023-12-24 12:11:22,208 INFO st_acn.py:63  :  [RunCSolver]iter = 43 Opt_P E v_iter0
+2023-12-24 12:16:57,974 INFO st_acn.py:65  :  [RunCSolver]iter = 43 Opt_P E v_iter0 end
+2023-12-24 12:17:01,238 INFO st_acn.py:63  :  [RunCSolver]iter = 43 Opt_P E v_iter1
+2023-12-24 12:22:36,713 INFO st_acn.py:65  :  [RunCSolver]iter = 43 Opt_P E v_iter1 end
+2023-12-24 12:22:40,025 INFO st_acn.py:74  :  [RunCSolver]iter = 43 calculate E end
+2023-12-24 12:22:40,409 INFO st_acn.py:79  :  [RunCSolver]iter = 43 wshrinkObj
+2023-12-24 12:22:53,615 INFO st_acn.py:94  :  [RunCSolver]iter = 43 calculate  errp errs
+2023-12-24 12:22:53,955 INFO st_acn.py:99  :  [RunCSolver]iter = 43 max_err=1766.1900160984776
+2023-12-24 12:22:53,955 INFO st_acn.py:61  :  [RunCSolver]iter = 44 calculate E
+2023-12-24 12:22:53,955 INFO st_acn.py:63  :  [RunCSolver]iter = 44 Opt_P E v_iter0
+2023-12-24 12:28:29,257 INFO st_acn.py:65  :  [RunCSolver]iter = 44 Opt_P E v_iter0 end
+2023-12-24 12:28:32,568 INFO st_acn.py:63  :  [RunCSolver]iter = 44 Opt_P E v_iter1
+2023-12-24 12:34:08,305 INFO st_acn.py:65  :  [RunCSolver]iter = 44 Opt_P E v_iter1 end
+2023-12-24 12:34:11,630 INFO st_acn.py:74  :  [RunCSolver]iter = 44 calculate E end
+2023-12-24 12:34:11,980 INFO st_acn.py:79  :  [RunCSolver]iter = 44 wshrinkObj
+2023-12-24 12:34:25,236 INFO st_acn.py:94  :  [RunCSolver]iter = 44 calculate  errp errs
+2023-12-24 12:34:25,557 INFO st_acn.py:99  :  [RunCSolver]iter = 44 max_err=2351.5518645641796
+2023-12-24 12:34:25,567 INFO st_acn.py:61  :  [RunCSolver]iter = 45 calculate E
+2023-12-24 12:34:25,567 INFO st_acn.py:63  :  [RunCSolver]iter = 45 Opt_P E v_iter0
+2023-12-24 12:40:02,513 INFO st_acn.py:65  :  [RunCSolver]iter = 45 Opt_P E v_iter0 end
+2023-12-24 12:40:05,836 INFO st_acn.py:63  :  [RunCSolver]iter = 45 Opt_P E v_iter1
+2023-12-24 12:45:43,054 INFO st_acn.py:65  :  [RunCSolver]iter = 45 Opt_P E v_iter1 end
+2023-12-24 12:45:46,433 INFO st_acn.py:74  :  [RunCSolver]iter = 45 calculate E end
+2023-12-24 12:45:46,783 INFO st_acn.py:79  :  [RunCSolver]iter = 45 wshrinkObj
+2023-12-24 12:46:00,591 INFO st_acn.py:94  :  [RunCSolver]iter = 45 calculate  errp errs
+2023-12-24 12:46:00,911 INFO st_acn.py:99  :  [RunCSolver]iter = 45 max_err=3334.745705746436
+2023-12-24 12:46:00,911 INFO st_acn.py:61  :  [RunCSolver]iter = 46 calculate E
+2023-12-24 12:46:00,911 INFO st_acn.py:63  :  [RunCSolver]iter = 46 Opt_P E v_iter0
+2023-12-24 12:51:36,996 INFO st_acn.py:65  :  [RunCSolver]iter = 46 Opt_P E v_iter0 end
+2023-12-24 12:51:41,541 INFO st_acn.py:63  :  [RunCSolver]iter = 46 Opt_P E v_iter1
+2023-12-24 12:57:16,791 INFO st_acn.py:65  :  [RunCSolver]iter = 46 Opt_P E v_iter1 end
+2023-12-24 12:57:22,073 INFO st_acn.py:74  :  [RunCSolver]iter = 46 calculate E end
+2023-12-24 12:57:22,545 INFO st_acn.py:79  :  [RunCSolver]iter = 46 wshrinkObj
+2023-12-24 12:57:37,025 INFO st_acn.py:94  :  [RunCSolver]iter = 46 calculate  errp errs
+2023-12-24 12:57:37,396 INFO st_acn.py:99  :  [RunCSolver]iter = 46 max_err=4677.187261684641
+2023-12-24 12:57:37,396 INFO st_acn.py:61  :  [RunCSolver]iter = 47 calculate E
+2023-12-24 12:57:37,396 INFO st_acn.py:63  :  [RunCSolver]iter = 47 Opt_P E v_iter0
+2023-12-24 13:03:12,434 INFO st_acn.py:65  :  [RunCSolver]iter = 47 Opt_P E v_iter0 end
+2023-12-24 13:03:15,787 INFO st_acn.py:63  :  [RunCSolver]iter = 47 Opt_P E v_iter1
+2023-12-24 13:08:52,881 INFO st_acn.py:65  :  [RunCSolver]iter = 47 Opt_P E v_iter1 end
+2023-12-24 13:08:56,155 INFO st_acn.py:74  :  [RunCSolver]iter = 47 calculate E end
+2023-12-24 13:08:56,516 INFO st_acn.py:79  :  [RunCSolver]iter = 47 wshrinkObj
+2023-12-24 13:09:11,707 INFO st_acn.py:94  :  [RunCSolver]iter = 47 calculate  errp errs
+2023-12-24 13:09:12,063 INFO st_acn.py:99  :  [RunCSolver]iter = 47 max_err=6404.545541463011
+2023-12-24 13:09:12,067 INFO st_acn.py:61  :  [RunCSolver]iter = 48 calculate E
+2023-12-24 13:09:12,067 INFO st_acn.py:63  :  [RunCSolver]iter = 48 Opt_P E v_iter0
+2023-12-24 13:14:53,073 INFO st_acn.py:65  :  [RunCSolver]iter = 48 Opt_P E v_iter0 end
+2023-12-24 13:14:57,007 INFO st_acn.py:63  :  [RunCSolver]iter = 48 Opt_P E v_iter1
+2023-12-24 13:20:40,972 INFO st_acn.py:65  :  [RunCSolver]iter = 48 Opt_P E v_iter1 end
+2023-12-24 13:20:44,737 INFO st_acn.py:74  :  [RunCSolver]iter = 48 calculate E end
+2023-12-24 13:20:45,134 INFO st_acn.py:79  :  [RunCSolver]iter = 48 wshrinkObj
+2023-12-24 13:20:59,679 INFO st_acn.py:94  :  [RunCSolver]iter = 48 calculate  errp errs
+2023-12-24 13:21:00,019 INFO st_acn.py:99  :  [RunCSolver]iter = 48 max_err=8722.917507272723
+2023-12-24 13:21:00,024 INFO st_acn.py:61  :  [RunCSolver]iter = 49 calculate E
+2023-12-24 13:21:00,024 INFO st_acn.py:63  :  [RunCSolver]iter = 49 Opt_P E v_iter0
+2023-12-24 13:26:41,168 INFO st_acn.py:65  :  [RunCSolver]iter = 49 Opt_P E v_iter0 end
+2023-12-24 13:26:44,524 INFO st_acn.py:63  :  [RunCSolver]iter = 49 Opt_P E v_iter1
+2023-12-24 13:32:19,250 INFO st_acn.py:65  :  [RunCSolver]iter = 49 Opt_P E v_iter1 end
+2023-12-24 13:32:22,656 INFO st_acn.py:74  :  [RunCSolver]iter = 49 calculate E end
+2023-12-24 13:32:23,048 INFO st_acn.py:79  :  [RunCSolver]iter = 49 wshrinkObj
+2023-12-24 13:32:37,544 INFO st_acn.py:94  :  [RunCSolver]iter = 49 calculate  errp errs
+2023-12-24 13:32:37,876 INFO st_acn.py:99  :  [RunCSolver]iter = 49 max_err=12445.570321565578
