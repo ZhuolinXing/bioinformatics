@@ -3,18 +3,18 @@ import logger as l
 import scanpy as sc
 import pandas as pd
 
-def load_data_for_h5(input_data_path:str, section_id:str):
+
+def load_data_for_h5(input_data_path: str, section_id: str):
     # 拼装输入数据路径
-    input_dir = os.path.join(input_data_path,section_id)
+    input_dir = os.path.join(input_data_path, section_id)
     l.logger.info(f"[LoadData]input dir {input_dir} ")
     # 加载 filtered_feature_bc_matrix.h5
 
     file_name_for_h5 = 'filtered_feature_bc_matrix.h5'
-    file_name_for_filtered_feature_bc_matrix =  f'{section_id}_{file_name_for_h5}'
+    file_name_for_filtered_feature_bc_matrix = f'{section_id}_{file_name_for_h5}'
     l.logger.info(f'[LoadData] {file_name_for_filtered_feature_bc_matrix} loading ...')
 
-
-    AnnData  = sc.read_visium(path=input_dir, count_file= file_name_for_filtered_feature_bc_matrix)
+    AnnData = sc.read_visium(path=input_dir, count_file=file_name_for_filtered_feature_bc_matrix)
     AnnData.var_names_make_unique()
     l.logger.info(f'[LoadData] {file_name_for_filtered_feature_bc_matrix} load success')
 
@@ -27,17 +27,18 @@ def load_data_for_h5(input_data_path:str, section_id:str):
     l.logger.info(f'[LoadData] {file_name_for_filtered_feature_bc_matrix} pre-process success')
     return AnnData
 
-def load_data_for_groud_truth(input_data_path:str, section_id:str, anndata):
+
+def load_data_for_groud_truth(input_data_path: str, section_id: str, anndata):
     truth_name = 'truth.txt'
-    ann_df_file_path  =  os.path.join(input_data_path, section_id,f'{section_id}_{truth_name}' )
+    ann_df_file_path = os.path.join(input_data_path, section_id, f'{section_id}_{truth_name}')
 
     l.logger.info(f'[load_data_for_truth] {input_data_path}')
 
-    ann_df  = pd.read_csv(ann_df_file_path, sep='\t', header=None,
+    ann_df = pd.read_csv(ann_df_file_path, sep='\t', header=None,
                          index_col=0)
     ann_df.columns = ['Ground Truth']
     anndata.obs['Ground Truth'] = ann_df.loc[anndata.obs_names, 'Ground Truth']
     ground_truth = pd.Categorical(anndata.obs['Ground Truth']).codes
 
     l.logger.info(f'[load_data_for_truth] {input_data_path} success')
-    return  ground_truth
+    return ground_truth

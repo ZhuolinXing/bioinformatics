@@ -1,12 +1,11 @@
 import numpy as np
-import pandas as pd
-from sklearn.neighbors import kneighbors_graph
-from sklearn.metrics.pairwise import cosine_similarity
+from numpy.linalg import svd
 from tqdm import trange
 import scipy.sparse as sp
-from scipy.linalg import svd
+from scipy.spatial.distance import cdist
+import logger as l
 
-from sklearn.decomposition import TruncatedSVD
+
 def soft_numpy(x, T):
     if np.sum(np.abs(T)) == 0.:
         y = x
@@ -23,6 +22,7 @@ def soft(x, T):
         y = np.maximum(np.abs(x) - T, 0.)
         y = np.sign(x) * y
     return y
+
 
 def create_sppmi_mtx(G, k):
     node_degrees = np.array(G.sum(axis=0)).flatten()
@@ -96,7 +96,7 @@ def solve_l1l2(W, lamb):
     E = W.copy()
 
     for i in range(n):
-        E[:,i] = solve_l2(W[:,i], lamb)
+        E[:, i] = solve_l2(W[:, i], lamb)
     return E
 
 
@@ -109,6 +109,7 @@ def solve_l2(w, lamb):
         x = np.zeros_like(w)
     return x
 
+
 def Opt_P(Y, mu, A, X):
     G = X.T
     Q = (A - Y / mu).T
@@ -117,6 +118,7 @@ def Opt_P(Y, mu, A, X):
     PT = U @ Vt
     P = PT.T
     return P
+
 
 # def constructW_PKN(X, k, issymmetric=True):
 #     if issymmetric:
@@ -135,8 +137,6 @@ def Opt_P(Y, mu, A, X):
 #         W = (W + W.T) / 2
 #     return W
 
-import numpy as np
-from scipy.spatial.distance import cdist
 
 def constructW_PKN(X, k=5, issymmetric=1):
     """
@@ -156,7 +156,7 @@ def constructW_PKN(X, k=5, issymmetric=1):
 
     W = np.zeros((n, n))
     for i in range(n):
-        id = idx[i, 1:k+2]
+        id = idx[i, 1:k + 2]
         di = D[i, id]
         W[i, id] = (di[k] - di) / (k * di[k] - np.sum(di[:k]) + np.finfo(float).eps)
 
@@ -164,7 +164,6 @@ def constructW_PKN(X, k=5, issymmetric=1):
         W = (W + W.T) / 2
 
     return W
-
 
 
 def L2_distance_1(a, b):
@@ -203,7 +202,6 @@ def wshrinkObj(x, rho, sX, isWeight, mode):
     else:
         n3 = sX[2]
 
-
     if n3 % 2 == 0:
         endValue = n3 // 2
     else:
@@ -224,7 +222,7 @@ def wshrinkObj(x, rho, sX, isWeight, mode):
         Yhat[:, :, i] = uhat @ np.diag(shat) @ vhat.T
 
         if i > 0:
-            Yhat[:, :, n3 - i] = np.conj(uhat) @ np.diag(shat) @ np.conj(vhat).T
+            Yhat[:, :, n3 - i] = np.dot(np.dot(np.conj(uhat), np.diag(shat)), np.conj(vhat).T)
             objV += np.sum(shat)
 
     # 如果 n3 是偶数，还需要处理中间的切片
@@ -240,7 +238,7 @@ def wshrinkObj(x, rho, sX, isWeight, mode):
             shat = np.maximum(shat - tau, 0)
 
         objV += np.sum(shat)
-        Yhat[:, :, endValue] = uhat @ np.diag(shat) @ vhat.T
+        Yhat[:, :, endValue] = np.dot(np.dot(uhat, np.diag(shat)), vhat.T)
 
     Y = np.fft.ifft(Yhat, axis=2)
 

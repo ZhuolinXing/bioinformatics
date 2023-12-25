@@ -58,14 +58,16 @@ def stACN(expression, spatial_network, gt, lamb=0.001, dim=100):
         d = 0
         l.logger.info(f'[RunCSolver]iter = {iter_} calculate E')
         for i in range(V):
-            l.logger.info(f'[RunCSolver]iter = {iter_} Opt_P E v_iter{i}')
-            P[i] = Opt_P(Yh[i], mu, Eh[i], X[i] - X[i] @ Zv[i])
+            Xi = X[i]
+            Zvi = Zv[i]
+            XZvi = np.dot(Xi,Zvi)
+            XX = Xi - XZvi
+            P[i] = Opt_P(Yh[i], mu, Eh[i], XX)
             # P[i] = updatePP(Yh[i], mu, Eh[i], X[i] - X[i] @ Zv[i])
-            l.logger.info(f'[RunCSolver]iter = {iter_} Opt_P E v_iter{i} end')
-            A = P[i] @ X[i]
-            Zv[i] = solve(A.T @ A + np.eye(N), A.T @ Yh[i] / mu + A.T @ (A - Eh[i]) + T[i] - Ys[i] / mu)
+            A = np.dot(P[i] , X[i])
+            Zv[i] = solve(np.dot(A.T , A) + np.eye(N), np.dot(A.T , Yh[i]) / mu + np.dot(A.T , (A - Eh[i])) + T[i] - Ys[i] / mu)
             Zv[i] = (Zv[i] + Zv[i].T) / 2
-            G = P[i] @ X[i] - P[i] @ X[i] @ Zv[i] + Yh[i] / mu
+            G = np.dot( P[i] , X[i]) -  np.dot(np.dot(P[i] , X[i]) , Zv[i]) + Yh[i] / mu
             B = np.vstack((B, G))
             E = solve_l1l2(B, lamb / mu)
             Eh[i] = E[d: (i+1) * dim,:]
@@ -84,7 +86,7 @@ def stACN(expression, spatial_network, gt, lamb=0.001, dim=100):
             T[i] = T_tensor[:, :, i]
             Ys[i] = Ys_tensor[:, :, i]
         for i in range(V):
-            G.append(P[i] @ X[i] - P[i] @ X[i] @ Zv[i] - Eh[i])
+            G.append( np.dot(P[i] , X[i]) - np.dot(np.dot(P[i] , X[i]) , Zv[i]) - Eh[i])
             Yh[i] = Yh[i] + mu * (G[i])
             Ys[i] = Ys[i] + mu * (Zv[i] - T[i])
         mu = min(pho * mu, max_mu)

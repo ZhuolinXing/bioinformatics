@@ -4,17 +4,14 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import argparse
 import os
-
-import numpy as np
-import scanpy as sc
-
+import warnings
 import logger as l
 import load_data
 import st_acn
 import pickle
 import cluster
-import pandas as pd
 
+warnings.filterwarnings('ignore', category=UserWarning)
 # 配置日志记录
 from src import enhence
 def parse_args():
@@ -115,14 +112,14 @@ def main():
     log_path = os.path.join(output_data_path,'log')
 
     # 初始化日志
-    l.initlog(log_path)
+    l.initlog(log_path,)
 
     # 打印启动日志
     l.logger.info(f'main args={args}')
 
     # 准备数据
     low_dim_x,enhanced_adata,cell_spatial,ground_truth = \
-        process_data(input_data_path,section_id)
+    process_data(input_data_path,section_id)
 
     # call
     call(low_dim_x,cell_spatial,ground_truth)
