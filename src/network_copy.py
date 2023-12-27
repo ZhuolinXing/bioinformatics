@@ -1,11 +1,8 @@
 import numpy as np
 from numpy.linalg import svd
+# from scipy.linalg import svd
 from tqdm import trange
 import scipy.sparse as sp
-from scipy.spatial.distance import cdist
-from numpy.fft import fft, ifft
-import logger as l
-
 
 def soft_numpy(x, T):
     if np.sum(np.abs(T)) == 0.:
@@ -97,7 +94,7 @@ def solve_l1l2(W, lamb):
     E = W.copy()
 
     for i in range(n):
-        E[i:, ] = solve_l2(W[i:, ], lamb)
+        E[:, i] = solve_l2(W[:, i], lamb)
     return E
 
 
@@ -113,10 +110,12 @@ def solve_l2(w, lamb):
 
 def Opt_P(Y, mu, A, X):
     G = X.T
-    Q = (A - Y / mu).T
-    W = G.T @ Q + np.finfo(float).eps
+    #Q = (A - Y / mu).T
+    Q = (Y / mu-A ).T
+    W = np.dot(G.T, Q) + np.finfo(float).eps
     U, S, Vt = svd(W, full_matrices=False)
-    PT = U @ Vt
+    # U, S, Vt = svd(W, 0)
+    PT = np.dot(U, Vt)
     P = PT.T
     return P
 
@@ -152,7 +151,8 @@ def constructW_PKN(X, k=5, issymmetric=1):
     - W: Similarity matrix.
     """
     dim, n = X.shape
-    D = L2_distance_1(X, X)
+    #D = cdist(X.T, X.T, metric='euclidean')
+    D = L2_distance_1(X,X)
     idx = np.argsort(D, axis=1)  # sort each row
 
     W = np.zeros((n, n))
@@ -165,33 +165,19 @@ def constructW_PKN(X, k=5, issymmetric=1):
         W = (W + W.T) / 2
 
     return W
+
+
 def L2_distance_1(a, b):
     if a.shape[0] == 1:
-        a = np.vstack((a, np.zeros((1, a.shape[1]))))
-        b = np.vstack((b, np.zeros((1, b.shape[1]))))
-
-    aa = np.sum(a*a, axis=0)
-    bb = np.sum(b*b, axis=0)
+        a = np.vstack([a, np.zeros((1, a.shape[1]))])
+        b = np.vstack([b, np.zeros((1, b.shape[1]))])
+    aa = np.sum(a * a, axis=0)
+    bb = np.sum(b * b, axis=0)
     ab = np.dot(a.T, b)
-
-    d = np.tile(aa.reshape(-1,1), (1, bb.shape[0])) + np.tile(bb, (aa.shape[0], 1)) - 2*ab
-    d = np.tile(aa.reshape(1, -1), (bb.size, 1)).T + np.tile(bb, (aa.size, 1)) - 2 * ab
-
-    d = d.real
+    d = np.tile(aa[:, np.newaxis], (1, bb.shape[0])) + np.tile(bb, (aa.shape[0], 1)) - 2 * ab
+    d = np.real(d)
     d = np.maximum(d, 0)
     return d
-#
-# def L2_distance_1(a, b):
-#     if a.shape[0] == 1:
-#         a = np.vstack([a, np.zeros((1, a.shape[1]))])
-#         b = np.vstack([b, np.zeros((1, b.shape[1]))])
-#     aa = np.sum(a * a, axis=0)
-#     bb = np.sum(b * b, axis=0)
-#     ab = np.dot(a.T, b)
-#     d = np.tile(aa[:, np.newaxis], (1, bb.shape[0])) + np.tile(bb, (aa.shape[0], 1)) - 2 * ab
-#     d = np.real(d)
-#     d = np.maximum(d, 0)
-#     return d
 
 
 def wshrinkObj(x, rho, sX, isWeight, mode):
@@ -201,14 +187,13 @@ def wshrinkObj(x, rho, sX, isWeight, mode):
         mode = 1
     X = x.reshape(sX)
     if mode == 1:
-        Y = np.moveaxis(X, 2, 0)
+        Y = np.swapaxes(X, 0, 2)
     elif mode == 3:
         Y = np.moveaxis(X, 0, -1)
     else:
         Y = X
 
-    # Yhat = np.fft.fftn(Y, axes=(2,))
-    Yhat = fft(Y,axis=2)
+    Yhat = np.fft.fft(Y, axis=2)
     objV = 0
 
     if mode == 1:
@@ -218,47 +203,28 @@ def wshrinkObj(x, rho, sX, isWeight, mode):
     else:
         n3 = sX[2]
 
-    # if n3 % 2 == 0:
-    #     endValue = n3 // 2
-    #     # Yhat = np.real(Yhat)
-    #     for i in range(endValue):
-    #         uhat, shat, vhat = svd(Yhat[:, :, i], full_matrices=False)
-    #
-    #         if isWeight:
-    #             weight = C / (np.diag(shat) + np.finfo(float).eps)
-    #             tau = rho * weight
-    #             shat = soft(shat, np.diag(tau))
-    #         else:
-    #             tau = rho
-    #             shat = np.maximum(shat - tau, 0)
-    #
-    #         objV += np.sum(shat)
-    #         Yhat[:, :, i] = uhat @ np.diag(shat) @ vhat.T
-    #
-    #         if i > 0:
-    #             Yhat[:, :, n3 - i ] = np.dot(np.dot(np.conj(uhat), np.diag(shat)), np.conj(vhat).T)
-    #             objV += np.sum(shat)
-    #
-    #         # 如果 n3 是偶数，还需要处理中间的切片
-    #
-    #     uhat, shat, vhat = np.linalg.svd(Yhat[:, :, endValue], full_matrices=False)
-    #
-    #     if isWeight:
-    #         weight = C / (np.diag(shat) + np.finfo(float).eps)
-    #         tau = rho * weight
-    #         shat = soft(shat, np.diag(tau))
-    #     else:
-    #         tau = rho
-    #         shat = np.maximum(shat - tau, 0)
-    #
-    #     objV += np.sum(shat)
-    #     Yhat[:, :, endValue+1] = np.dot(np.dot(uhat, np.diag(shat)), vhat.T)
-    # else:
-    endValue = n3 // 2 + 1
-    # Yhat = np.real(Yhat)
-    for i in range(endValue):
-        uhat, shat, vhat = svd(Yhat[:, :, i], full_matrices=False)
-        vhat = vhat.conj().T
+    if n3 % 2 == 0:
+        endValue = np.int16(np.floor(n3/2)+ 1)
+        Yhat = np.real(Yhat)
+        for i in range(1, endValue+1):
+            uhat, shat, vhat = svd(Yhat[:, :, i-1], full_matrices=False)
+
+            if isWeight:
+                weight = C / (np.diag(shat) + np.finfo(float).eps)
+                tau = rho * weight
+                shat = soft(shat, np.diag(tau))
+            else:
+                tau = rho
+                shat = np.maximum(shat - tau, 0)
+
+            objV += np.sum(shat)
+            Yhat[:, :, i-1] = np.dot(np.dot(uhat, np.diag(shat)), vhat.T)
+            if i > 1:
+                Yhat[:, :, n3 - i+1] = np.dot(np.dot(np.conj(uhat), np.diag(shat)), np.conj(vhat).T)
+                objV += np.sum(shat)
+
+        uhat, shat, vhat = svd(Yhat[:, :, endValue], full_matrices=False)
+
         if isWeight:
             weight = C / (np.diag(shat) + np.finfo(float).eps)
             tau = rho * weight
@@ -268,17 +234,29 @@ def wshrinkObj(x, rho, sX, isWeight, mode):
             shat = np.maximum(shat - tau, 0)
 
         objV += np.sum(shat)
-        Yhat[:, :, i] = uhat @ np.diag(shat) @ vhat.T
-
-        if i > 0:
-            Yhat[:, :, n3 - i ] = np.dot(np.dot(np.conj(uhat), np.diag(shat)), np.conj(vhat).T)
+        Yhat[:, :, endValue] = np.dot(np.dot(uhat, np.diag(shat)), vhat.T)
+    else:
+        endValue = np.int16(np.floor(n3/2) + 1)
+        Yhat = np.real(Yhat)
+        for i in range(1, endValue+1):
+            uhat, shat, vhat = svd(Yhat[:, :, i-1], full_matrices=False)
+            if isWeight:
+                weight = C / (np.diag(shat) + np.finfo(float).eps)
+                tau = rho * weight
+                shat = soft(shat, np.diag(tau))
+            else:
+                tau = rho
+                shat = np.maximum(shat - tau, 0)
             objV += np.sum(shat)
+            Yhat[:, :, i-1] = np.dot(np.dot(uhat, np.diag(shat)), vhat.T)
+            if i > 1:
+                Yhat[:, :, n3 - i+1] = np.dot(np.dot(np.conj(uhat), np.diag(shat)), np.conj(vhat).T)
+                objV += np.sum(shat)
 
-    del x, X, Y
-    Y = ifft(Yhat,axis=2)
+    Y = np.real(np.fft.ifft(Yhat, axis=2))
 
     if mode == 1:
-        X = ifft(Y,axis=2)
+        X = np.fft.ifft(Y, axis=2)
     elif mode == 3:
         X = np.moveaxis(Y, -1, 0)
     else:

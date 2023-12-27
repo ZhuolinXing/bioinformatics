@@ -24,17 +24,16 @@ def stACN(expression, spatial_network, gt, lamb=0.001, dim=100):
 
     # 归一化
     w_dump = "./w_dump.pkl"
-    if os.path.exists(w_dump):
-        with open(w_dump,'rb') as  w_dump_file:
-            W = pickle.load(w_dump_file)
-    else :
-        for i in range(2):
-            # 将data[i]除以每列的平方根
-            data[i] =  data[i] / np.tile(np.sqrt(np.sum(data[i] ** 2, axis=0)), (data[i].shape[0], 1))
-            W[i] = create_sppmi_mtx(constructW_PKN(data[i], 10), 2)
-            #W[i] = create_sppmi_mtx(data[i], 2)
-        with open(w_dump,'wb') as  w_dump_file:
-            pickle.dump(W,w_dump_file)
+    # if os.path.exists(w_dump):
+    #     with open(w_dump,'rb') as  w_dump_file:
+    #         W = pickle.load(w_dump_file)
+    # else :
+    for i in range(2):
+        # 将data[i]除以每列的平方根
+        data[i] =  data[i] / np.tile(np.sqrt(np.sum(data[i] ** 2, axis=0)), (data[i].shape[0], 1))
+        W[i] = create_sppmi_mtx(constructW_PKN(data[i], 10), 2)
+    with open(w_dump,'wb') as  w_dump_file:
+        pickle.dump(W,w_dump_file)
     X = W
     V = len(X)
     N = X[0].shape[0]
@@ -97,7 +96,7 @@ def stACN(expression, spatial_network, gt, lamb=0.001, dim=100):
             errp[i] = np.linalg.norm(G[i], np.inf)
             errs[i] = np.linalg.norm(Zv[i] - T[i], np.inf)
         max_err = np.max(errp + errs)
-        l.logger.info(f'[RunCSolver]iter = {iter_} max_err={max_err}')
+        l.logger.info(f'[RunCSolver]iter = {iter_} errs = {errs} errp {errp} max_err={max_err}')
         if max_err <=  thresh:
             l.logger.info(f'[RunCSolver]iter = {iter_} max_err={max_err} < {thresh} break')
             break
