@@ -1,6 +1,4 @@
-import logging
 import os.path
-import pickle
 import cluster
 import numpy as np
 from src.networks import create_sppmi_mtx,construct_w_pkn
@@ -10,7 +8,7 @@ from  scipy.linalg import solve
 import logger as l
 import load_data
 from scipy.io import loadmat
-from load_data import load_by_pkl ,dump_by_pkl
+from load_data import load_by_pkl, dump_by_pkl
 
 def st_acn(expression, spatial_network, lamb=0.001, dim=200,is_reload=False ,output_path="output"):
     expression = expression.T
@@ -54,10 +52,7 @@ def st_acn(expression, spatial_network, lamb=0.001, dim=200,is_reload=False ,out
         d = 0
         l.logger.info(f'[st_acn]iter = {iter_} calculate E')
         for i in range(V):
-            Xi = X[i]
-            Zvi = Zv[i]
-            XZvi = np.dot(Xi,Zvi)
-            XX = Xi - XZvi
+            XX = X[i] -  np.dot(X[i],Zv[i])
             P[i] = opt_p(Yh[i], mu, Eh[i], XX)
             A = np.dot(P[i] , X[i])
             Zv[i] = solve(np.dot(A.T , A) + np.eye(N), np.dot(A.T , Yh[i] / mu) + np.dot(A.T , (A - Eh[i])) + T[i] - Ys[i] / mu)
@@ -71,18 +66,15 @@ def st_acn(expression, spatial_network, lamb=0.001, dim=200,is_reload=False ,out
         l.logger.info(f'[st_acn]iter = {iter_} calculate E end')
 
         Z_tensor = np.stack(Zv, axis=2)
-        T_tensor = np.stack(T,axis=2)
         Ys_tensor = np.stack(Ys, axis=2)
         l.logger.info(f'[st_acn]iter = {iter_} wshrink_obj')
         G_tensor = Z_tensor + 1/mu * Ys_tensor
         t_tensor,objk = wshrink_obj(G_tensor, 1 / mu, sX, 0, 3) #
-        # t_tensor = np.abs(t_tensor)
         T_tensor = t_tensor.reshape(sX)
 
         for i in range(V):
             Zv[i] = Z_tensor[:, :, i]
             T[i] = T_tensor[:, :, i]
-            # T[i] = (T[i] + T[i].T) / 2
             Ys[i] = Ys_tensor[:, :, i]
         GG = []
         for i in range(V):
